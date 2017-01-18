@@ -1,6 +1,10 @@
-$navbar-default-bg: #0020C2;
-$light-orange: ff8c00;
-$navbar-default-color: $light-orange;
+.navbar-default {
+ background: #0575E6; /* fallback for old browsers */
+ background: -webkit-linear-gradient(to top, #0575E6 , #021B79); /* Chrome 10-25, Safari 5.1-6 */
+ background: linear-gradient(to top, #0575E6 , #021B79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ background-repeat: repeat-x;
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -10,7 +14,7 @@ $navbar-default-color: $light-orange;
   margin-bottom: 10px;
   float: left;
   margin-right: 10px;
-  font-size: 1.5 em;
+  font-size: 1.75 em;
   color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -19,6 +23,7 @@ $navbar-default-color: $light-orange;
 }
 .jumbotron {
   margin-top: 30px;
+  border-radius: 15px;
 }
 
 #logo:hover {
@@ -41,9 +46,7 @@ body{
 h2, h3, h4 {
   line-height: 1;
 }
-a {
-  color: #FCD71E;
-}
+
 h1 {
   font-size: 3em;
   letter-spacing: 0;
@@ -53,11 +56,14 @@ h1 {
   font-family: 'Anton', sans-serif;
 }
 h2 { 
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
   color: #0000A0;
+}
+h4 {
+  margin-top: 20px;
 }
 .left {
   text-align: left;
@@ -69,23 +75,40 @@ h2 {
   color: #F70D1A;
 }
 .chef_info {
+ margin-top: 2px;
+ margin-right: 10px;
+ h5 {
+   margin-top: 15px;
+   color: #0000AC;
+ }
+}
+.chef-name {
   margin-top: 10px;
 }
 .gravatar { 
-  
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+  -moz-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+   border: 1.5px solid #021B79;
+   border-radius: 15px;
 }
-
-.well.blend-gradient-green{
-  -webkit-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.85);
-  -moz-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.85);
-  background: -webkit-linear-gradient(3deg, rgb(251, 255, 255), rgb(8, 160, 115));
-  background: linear-gradient(3deg, rgb(251, 255, 255), rgb(8, 160, 115));
+.show-gravatar {
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+  -moz-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+   border-radius: 15px
+}
+.top {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.mar-left {
+  margin-left: 20px;
 }
 input, textarea, select, .uneditable-input {
   border: 1px solid #0000A0;
   border-radius: 5px;
   width: 100%;
   margin-bottom: 15px;
+  color: #0000A0;
 }
 input {
   height: auto !important;
@@ -93,11 +116,40 @@ input {
 .ul_msg {
   list-style-type: decimal;
 } 
+.pull-down {
+  margin-top: 40px;
+}
+.pull-up {
+  margin-bottom: 40px;
+}
+.show-well {
+  border-radius: 20px;
+  margin-top: 20px;
+}
+h1.color-white {
+  color: white;
+}
+h4.color-blue {
+  color: #021B79;
+}
+.blend-blue {
+-webkit-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+  -moz-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+  color: white;
+  border-radius: 15px;
+  background: #0575E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #0575E6 , #021B79); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #0575E6 , #021B79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}          
 
-.well {
-  border: 1.5px solid #1569C7; 
-} 
-
+.blend-reef {
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+  -moz-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
+  border-radius: 15px;
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #00d2ff , #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 
 
@@ -105,6 +157,7 @@ input {
 .blend-gradient {
   -webkit-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.85);
   -moz-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.85);
+  border-radius: 15px;
   background: -webkit-linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
   background: linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
 }
@@ -134,4 +187,19 @@ input {
 	background: -ms-linear-gradient(top,  #267c99 50%,#007299 50%); /* IE10+ */
 	background: linear-gradient(to bottom,  #267c99 50%,#007299 50%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#267c99', endColorstr='#007299',GradientType=0 ); /* IE6-9 */
+}
+span.picture {
+  margin-top: 10px;
+   input {
+    border: 0px;
+  }
+}
+.show_recipe {
+  margin: 10px 10px 10px 10px;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: chartreuse;
 }
