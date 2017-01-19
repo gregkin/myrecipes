@@ -9,13 +9,21 @@
     <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: 'btn btn-primary gradient pull-right pull-up' %>
     <h3 class = "center pull-down"><%= @recipe.summary %></h3>
     <div class = "show_recipe center">
-      <%= image_tag(@recipe.picture.url, size: '738x170', class: "show-gravatar center") if @recipe.picture? %>
+      <%= image_tag(@recipe.picture.url, size: '738x200', class: "show-gravatar center") if @recipe.picture? %>
     </div>
     <div class = "show-well well blend-blue">
       <p>
         <strong>Steps:</strong>
       </p>
       <%= simple_format(@recipe.description) %>
+      <div class = 'pull-right'>
+        <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+        <i class = 'glyphicon glyphicon-thumbs-up'></i> &nbsp <%=@recipe.thumbs_up_total %>
+        <% end %> &nbsp&nbsp&nbsp&nbsp
+        <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+        <i class = "glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
+        <% end %>
+      </div>
     </div> 
   </div>
 </div>
