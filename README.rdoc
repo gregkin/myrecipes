@@ -1,9 +1,26 @@
-== README
+Chefs:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+What we have already:
+- Chef Model and Validations
+- Chef's Table with columns chefname and email
 
-Things you may want to cover:
+What we need to do:
+- Add passwords to Chef's Table so Chef's can be authenticated and logged in
+- Use email as log in credentials since email is unique
+- Ability to register new chefs to use the app.
+- Ability to display chef's profile.
+- Ability to list using the app.
+- Ability for chefs to log in and out of app.
+- Restrict actions like create recipe, edit recipe and like feature to logged in chefs only.
+- Restricting edit of recipes by the chef who created the recipe.
+
+- Rails comes packaged with the gem has_secure_password.
+
+
+
+
+
+
 
 * Ruby version
 

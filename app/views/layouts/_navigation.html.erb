@@ -1,14 +1,33 @@
 <header class = "navbar navbar-fixed-top navbar-default">
     <div class = "container">
-      <%= link_to "Great-Recipes", root_path ,class: 'btn btn-primary gradient btn-lg', id: "logo" %>
+      <%= link_to "Great-Recipes", root_path ,class: 'btn btn-default gradient btn-lg', id: "logo" %>
       <div class = "nav_item">
-        <%= link_to "Link 1", "", class: 'btn btn-primary gradient' %>
+        <%= link_to "Link 1", "", class: 'btn btn-default gradient' %>
       </div>
       <div class = "nav_item">
-        <%= link_to "Link 2", "", class: 'btn btn-primary gradient' %>
+        <%= link_to "Link 2", "", class: 'btn btn-default gradient' %>
       </div>
-      <div class = "nav_item">
-        <%= link_to "New Recipe", new_recipe_path, class: 'btn btn-primary gradient' %>
-      </div>
+      <% if logged_in? %>
+        <div class = "nav_item">
+          <%= link_to "New Recipe", new_recipe_path, class: 'btn btn-default gradient' %>
+        </div>
+        <ul class = "nav_item">
+          <li class = "dropdown">
+            <%= link_to '#', class: "btn btn-default gradient dropdown-toggle", "data-toggle" => "dropdown" do %>
+              <%= current_user.chefname %> <b class = "caret"></b>
+            <% end %>
+            <ul class = "dropdown-menu default gradient">
+              <li><%= link_to "View Profile", chef_path(current_user) %></li>
+              <li><%= link_to "Edit Profile", edit_chef_path(current_user) %></li>
+              <li class = "divider"></li>
+              <li><%= link_to "Logout", logout_path %></li>
+            </ul>
+          </li>
+        </ul>
+      <% else %>
+        <div class = "nav_item">
+          <%= link_to "Log in", login_path, class: 'btn btn-default gradient' %>
+        </div>
+      <% end %>
     </div>
 </header>

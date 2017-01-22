@@ -2,11 +2,13 @@
 
 <div class = "row">
   <div class = "col-md-4 pull-right center">
-    <%= gravatar_for @recipe.chef, size: 200 %>
+    <%= link_to gravatar_for(@recipe.chef, size: 200), chef_path(@recipe.chef) %>
     <p><h4 class = "color-blue">Brougnt to you by <%= @recipe.chef.chefname %></h4></p>
   </div>
   <div class = "col-md-8">
-    <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: 'btn btn-primary gradient pull-right pull-up' %>
+    <% if logged_in? and @recipe.chef == current_user %>
+      <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: 'btn btn-primary gradient pull-right pull-up' %>
+    <% end %>
     <h3 class = "center pull-down"><%= @recipe.summary %></h3>
     <div class = "show_recipe center">
       <%= image_tag(@recipe.picture.url, size: '738x200', class: "show-gravatar center") if @recipe.picture? %>
@@ -24,7 +26,7 @@
         <i class = "glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
         <% end %>
       </div>
-    </div> 
+    </div>
   </div>
 </div>
 
