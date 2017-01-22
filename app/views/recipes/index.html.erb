@@ -5,13 +5,13 @@
     <%= will_paginate %>
   </div>
 </div>
-  
+
   <% @recipes.each do |recipe| %>
     <div class = "row">
       <div class = "col-md-2 center">
         <section class = "chef_info center">
           <%=link_to gravatar_for(recipe.chef, size: 140), chef_path(recipe.chef) %>
-          <h5>Chef name: <%= recipe.chef.chefname %></h5>
+          </p><h5>Chef name: <%= recipe.chef.chefname %></h5></p>
         </section>
       </div>
       <div class = "col-lg-6 well row <%= cycle('blend-blue','blend-reef') %>">
@@ -29,7 +29,7 @@
             <i class = "glyphicon glyphicon-thumbs-down"></i> &nbsp <%= recipe.thumbs_down_total %>
             <% end %>
           </div>
-      </div> 
+      </div>
       <div class = "col-md-4 mar-left ">
         <%= image_tag(recipe.picture.url, size: '400x165', class: "gravatar") if recipe.picture? %>
       </div>
