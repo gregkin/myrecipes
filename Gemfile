@@ -29,12 +29,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave', '0.10.0'
 # Not sure yet
 gem 'mini_magick', '3.8.0'
-# Use pagination 
+# Use pagination
 gem 'will_paginate', '3.0.7'
 # Use Bootstrap with pagination
-gem 'bootstrap-will_paginate', '0.0.10' 
+gem 'bootstrap-will_paginate', '0.0.10'
 # Use bcrypt
 gem 'bcrypt', '3.1.7'
+# Use Fog for images
+gem 'fog', '1.23.0'
 
 
 # Use ActiveModel has_secure_password
