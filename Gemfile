@@ -37,6 +37,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '3.1.7'
 # Use Fog for images
 gem 'fog', '1.23.0'
+gem 'net-ssh', '3.2.0'
 
 
 # Use ActiveModel has_secure_password
