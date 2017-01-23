@@ -20,7 +20,7 @@
   padding-top: 9px;
   font-weight: bold;
 }
-.container .jumbotron, .container-fluid .jumbotron {
+.container .jumbotron, .container-fluid .jumbotron{
   margin-top: 30px;
   border-radius: 20px;
   border: 1.5px solid white;
@@ -43,24 +43,28 @@ body{
 .center {
   text-align: center;
 }
-h2, h3, h4 {
+h3, h4 {
   line-height: 1;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 4em;
+  text-shadow: 2px 2px #0000A0;
   letter-spacing: 0;
   margin-bottom: 30px;
   text-align: center;
-  color: #1569C7;
-  font-family: 'Anton', sans-serif;
+
+  // font-family: 'Anton', sans-serif;
+  font-family: 'Limelight', cursive;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 3.75em;
+  text-shadow: 2px 1px #0000A0;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #0000A0;
+  color: #06aae5;
+  font-family: 'Limelight', cursive;
 }
 h4 {
   margin-top: 20px;
@@ -84,6 +88,9 @@ h4 {
 }
 .chef-name {
   margin-top: 10px;
+}
+.glyphicon-thumbs-up .glyphicon-thumbs-down {
+  color: white;
 }
 .gravatar {
   -webkit-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
@@ -127,7 +134,7 @@ input {
   margin-top: 20px;
   border: 1.5px solid white;
 }
-h1.color-white {
+.color-white {
   color: white;
 }
 h4.color-blue {
@@ -205,6 +212,9 @@ a:hover {
   color: #021B79;
 }
 
+a {
+  color:white;
+}
 
 
 
