@@ -20,9 +20,10 @@
   padding-top: 9px;
   font-weight: bold;
 }
-.jumbotron {
+.container .jumbotron, .container-fluid .jumbotron {
   margin-top: 30px;
-  border-radius: 15px;
+  border-radius: 20px;
+  border: 1.5px solid white;
 }
 
 #logo:hover {
@@ -124,6 +125,7 @@ input {
 .show-well {
   border-radius: 20px;
   margin-top: 20px;
+  border: 1.5px solid white;
 }
 h1.color-white {
   color: white;
@@ -135,6 +137,7 @@ h4.color-blue {
 -webkit-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
   -moz-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
   color: white;
+  border: 1.5px solid white;
   border-radius: 15px;
   background: #0575E6; /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #0575E6 , #021B79); /* Chrome 10-25, Safari 5.1-6 */
@@ -145,6 +148,7 @@ h4.color-blue {
   -webkit-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
   -moz-box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.85);
   color: white;
+  border: 1.5px solid white;
   border-radius: 15px;
   background: #00d2ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
