@@ -209,7 +209,9 @@ h4.color-blue {
 span.picture {
   margin-top: 10px;
    input {
-    border: 0px;
+    padding-left: 15px;
+    background: #021B79;
+    color:white;
   }
 }
 .show_recipe {
@@ -225,7 +227,7 @@ a {
 
 
 .btn-default.gradient {
-  color: #0000A0;
+  color: #021B79;
 	background: -moz-linear-gradient(top,  #FBFBFB 50%, #E3E4E4 50%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#FBFBFB), color-stop(50%,#E3E4E4)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  #FBFBFB 50%,#E3E4E4 50%); /* Chrome10+,Safari5.1+ */
