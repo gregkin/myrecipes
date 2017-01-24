@@ -14,11 +14,11 @@
   margin-bottom: 10px;
   float: left;
   margin-right: 10px;
-  font-size: 1.75 em;
+  font-size: 1.75em;
   text-transform: uppercase;
-  letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
+  font-weight: normal;
+  font-family: 'Limelight', cursive;
 }
 .container .jumbotron, .container-fluid .jumbotron {
   margin-top: 30px;
@@ -222,14 +222,10 @@ a:hover {
 a {
   color:white;
 }
-.title {
-  background-color: red;
-}
-
 
 
 .btn-default.gradient {
-  color: #1569C7;
+  color: #0000A0;
 	background: -moz-linear-gradient(top,  #FBFBFB 50%, #E3E4E4 50%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#FBFBFB), color-stop(50%,#E3E4E4)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  #FBFBFB 50%,#E3E4E4 50%); /* Chrome10+,Safari5.1+ */
