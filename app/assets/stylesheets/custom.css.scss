@@ -20,7 +20,7 @@
   padding-top: 9px;
   font-weight: bold;
 }
-.container .jumbotron, .container-fluid .jumbotron .center{
+.container .jumbotron, .container-fluid .jumbotron {
   margin-top: 30px;
   border-radius: 20px;
   border: 1.5px solid white;
@@ -59,12 +59,19 @@ h1 {
 }
 h2 {
   font-size: 3.75em;
-  text-shadow: 2px 1px #0000A0;
+  text-shadow: 2px 1px #000000;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #06aae5;
+  color: #FFFFFF;
   font-family: 'Limelight', cursive;
+  border-radius: 20px;
+  border: 1.5px solid #000000;
+  background: #0575E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #0575E6 , #021B79); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #0575E6 , #021B79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
 }
 h4 {
   margin-top: 20px;
@@ -73,7 +80,7 @@ h4 {
   text-align: left;
   text-spacing: .5px;
 }
-.footer {
+.footer .center {
   margin-top: 25px;
   border-top: 1px solid #eaeaea;
   color: #021B79;
@@ -215,7 +222,9 @@ a:hover {
 a {
   color:white;
 }
-
+.title {
+  background-color: red;
+}
 
 
 
