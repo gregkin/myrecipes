@@ -1,5 +1,9 @@
 <div class = "row">
+  <% if title.length > 15 %>
+  <div class = "col-md-8 col-md-offset-2 center">
+  <% else %>
   <div class = "col-md-6 col-md-offset-3 center">
-  <h2><%= title %></h2>
+  <% end %>
+    <h2><%= title %></h2>
   </div>
 </div>
