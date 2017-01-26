@@ -14,8 +14,12 @@
       <%= image_tag(@recipe.picture.url, size: '738x200', class: "show-gravatar center") if @recipe.picture? %>
     </div>
     <div class = "show-well well blend-blue">
-      <p>Styles: <%= render @recipe.styles %></p>
-      <p>Ingredients: <%= render @recipe.ingredients %></p>
+      <% if @recipe.styles.any? %>
+        <p>Styles: <%= render @recipe.styles %></p>
+      <% end %>
+      <% if @recipe.ingredients.any? %>
+        <p>Ingredients: <%= render @recipe.ingredients %></p>
+      <% end %>
       <p>
         <strong>Steps:</strong>
       </p>
