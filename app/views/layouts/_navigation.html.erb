@@ -1,17 +1,35 @@
 <header class = "navbar navbar-fixed-top navbar-default">
     <div class = "container">
       <%= link_to "Great-Recipes", root_path ,class: 'btn btn-default gradient btn-lg', id: "logo" %>
-      <div class = "nav_item">
-        <%= link_to "Link 1", "", class: 'btn btn-default gradient' %>
-      </div>
-      <div class = "nav_item">
-        <%= link_to "Link 2", "", class: 'btn btn-default gradient' %>
-      </div>
+      <ul class = "nav_ul_item">
+        <li class = "dropdown">
+            <%= link_to '#', class: "btn btn-default gradient dropdown-toggle", "data-toggle" => "dropdown" do %>
+              Styles<b class = "caret"></b>
+            <% end %>
+            <ul class = "dropdown-menu default gradient">
+              <% Style.all.each do |style| %>
+              <li><%= link_to style.name, style_path(style) %></li>
+              <% end %>
+            </ul>
+          </li>
+      </ul>
+      <ul class = "nav_ul_item">
+        <li class = "dropdown">
+            <%= link_to '#', class: "btn btn-default gradient dropdown-toggle", "data-toggle" => "dropdown" do %>
+              Ingredients <b class = "caret"></b>
+            <% end %>
+            <ul class = "dropdown-menu default gradient">
+              <% Ingredient.all.each do |ingredient| %>
+              <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+              <% end %>
+            </ul>
+          </li>
+      </ul>
       <% if logged_in? %>
         <div class = "nav_item">
           <%= link_to "New Recipe", new_recipe_path, class: 'btn btn-default gradient' %>
         </div>
-        <ul class = "nav_item">
+        <ul class = "nav_ul_item">
           <li class = "dropdown">
             <%= link_to '#', class: "btn btn-default gradient dropdown-toggle", "data-toggle" => "dropdown" do %>
               <%= current_user.chefname %> <b class = "caret"></b>

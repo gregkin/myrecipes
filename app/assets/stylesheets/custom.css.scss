@@ -40,6 +40,11 @@ body{
   margin-top: 15px;
   color: #FFFFFF;
 }
+.nav_ul_item {
+  padding-left: 25px;
+  float: left;
+  margin-top: 15px;
+}
 .center {
   text-align: center;
 }
@@ -129,6 +134,9 @@ input {
 }
 .ul_msg {
   list-style-type: decimal;
+}
+ul {
+  list-style-type: none;
 }
 .pull-down {
   margin-top: 40px;
