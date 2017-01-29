@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @recipes = Recipe.paginate(page: params[:page], per_page: 4)
+    @recipes = Recipe.paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -55,7 +55,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.find(params[:id]).destroy
-    flash[:success] = "Recipe Deleted"
+    flash[:success] = "Recipe has been Deleted"
     redirect_to recipes_path
   end
 
@@ -76,12 +76,20 @@ class RecipesController < ApplicationController
       end
     end
 
+    def require_user
+      if !logged_in?
+        flash[:danger] = "You must be logged in to perform that action"
+        redirect_to :back
+      end
+    end
+
     def require_user_like
       if !logged_in?
         flash[:danger] = "You must be logged in to perform that action"
         redirect_to :back
       end
     end
+
 
     def admin_user
       redirect_to recipes_path unless current_user.admin?

@@ -1,7 +1,10 @@
 <header class = "navbar navbar-fixed-top navbar-default">
     <div class = "container">
-      <%= link_to "Great-Recipes", root_path ,class: 'btn btn-default gradient btn-lg', id: "logo" %>
-      <ul class = "nav_ul_item">
+      <%= link_to root_path , class: 'btn btn-default gradient btn-lg logo' do %>
+       <i class = 'glyphicon glyphicon-cutlery'></i>&nbsp Great  Recipes
+      <% end %>
+
+        <ul class = "nav_ul_item">
         <li class = "dropdown">
             <%= link_to '#', class: "btn btn-default gradient dropdown-toggle", "data-toggle" => "dropdown" do %>
               Styles<b class = "caret"></b>

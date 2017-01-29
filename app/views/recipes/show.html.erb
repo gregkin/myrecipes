@@ -1,39 +1,45 @@
 <%= render 'shared/page_title', title: @recipe.name %>
 
-<div class = "row">
-  <div class = "col-md-4 pull-right center">
+<div class="row">
+  <div class = "pull-right mar-right">
     <%= link_to gravatar_for(@recipe.chef, size: 200), chef_path(@recipe.chef) %>
-    <p><h4 class = "color-blue">Brougnt to you by <%= @recipe.chef.chefname %></h4></p>
+    <p>
+      <h5>Brought to you by: <%= @recipe.chef.chefname %></h5>
+    </p>
   </div>
-  <div class = "col-md-8">
-    <% if logged_in? and @recipe.chef == current_user %>
-      <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: 'btn btn-primary gradient pull-right pull-up' %>
+  <div class="col-md-6 col-md-offset-3">
+    <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
+      <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: "btn btn-default gradient pull-right" %>
     <% end %>
-    <h3 class = "center pull-down"><%= @recipe.summary %></h3>
-    <div class = "show_recipe center">
-      <%= image_tag(@recipe.picture.url, size: '738x200', class: "show-gravatar center") if @recipe.picture? %>
+    <% if logged_in? and current_user.admin? %>
+      <%= link_to "Delete Recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" },class: 'btn btn-default gradient pull-left' %>
+    <% end %>
+    <%= link_to "Return to Recipes Listing", recipes_path, class: "btn btn-default gradient btn-small pull-left1" %>
+    <h3><%= @recipe.summary %></h3>
+    <div class= "center pull-up">
+      <%= image_tag(@recipe.picture.url, class: "img-circle center-block") if @recipe.picture? %>
     </div>
-    <div class = "show-well well blend-blue">
-      <% if @recipe.styles.any? %>
+    <div class="well blend-blue">
+      <!--<% if @recipe.styles.any? %>-->
         <p>Styles: <%= render @recipe.styles %></p>
-      <% end %>
-      <% if @recipe.ingredients.any? %>
+      <!--<% end %>-->
+      <!--<% if @recipe.ingredients.any? %>-->
         <p>Ingredients: <%= render @recipe.ingredients %></p>
-      <% end %>
+      <!--<% end %>-->
       <p>
         <strong>Steps:</strong>
       </p>
       <%= simple_format(@recipe.description) %>
-      <div class = 'pull-right'>
+      <div class="pull-right">
         <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
-        <i class = 'glyphicon glyphicon-thumbs-up'></i> &nbsp <%=@recipe.thumbs_up_total %>
+          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @recipe.thumbs_up_total %>
         <% end %> &nbsp&nbsp&nbsp&nbsp
         <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
-        <i class = "glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
+          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<h5><%= link_to "Return to the Recipes Listing", recipes_path, class: 'btn btn-primary gradient btn-small' %></h5>
+<h5><%= link_to "Return to Recipes Listing", recipes_path, class: "btn btn-default gradient btn-small" %></h5>

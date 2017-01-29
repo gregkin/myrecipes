@@ -1,5 +1,5 @@
 <%= render 'shared/page_title', title: 'Recipes for: ' + @style.name + ' foods.' %>
-<div class = "tab-content">
+<div class = "tab-content mar-left">
   <ul class = "nav nav-tabs default gradient">
     <li class = "active">
       <%= link_to "Recipes", recipes_path %>
@@ -43,7 +43,7 @@
           </div>
       </div>
       <div class = "col-md-4 mar-left ">
-        <%= image_tag(recipe.picture.url, size: '400x225', class: "gravatar") if recipe.picture? %>
+        <%= image_tag(recipe.picture.url, size: '400x225', class: "test pull-up1") if recipe.picture? %>
       </div>
     </div>
     <hr>
